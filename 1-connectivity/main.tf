@@ -164,7 +164,7 @@ prefix          = local.prefix
 firewalls = local.firewalls
 resource_group_name        = "${local.prefix}-hub-rg"
 resource_group_location    = "Southeast Asia"
-
+depends_on = [ module.resource_groups ]
 }
 
 locals {
