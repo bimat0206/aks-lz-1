@@ -1,0 +1,13 @@
+{
+  "backup": [
+    {
+      "frequency": "Daily",
+      "time": "23:00"
+    }
+  ],
+  "retention_daily": [
+    {
+      "count": 15
+    }
+  ]
+}

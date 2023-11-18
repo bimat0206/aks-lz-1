@@ -1,0 +1,12 @@
+[
+  {
+    "user_principal_name": "user3",
+    "user_display_name": "User 3",
+    "account_enabled": "true"
+  },
+  {
+    "user_principal_name": "user6",
+    "user_display_name": "User 6",
+    "account_enabled": "false"
+  }
+]

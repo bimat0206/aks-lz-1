@@ -1,0 +1,31 @@
+{
+  "policy_rules": [
+    {
+      "policyRule": {
+        "if": {
+          "not": {
+            "field": "location",
+            "in": "[parameters('listOfAllowedLocations')]"
+          }
+        },
+        "then": {
+          "effect": "deny"
+        }
+      },
+      "parameters": {
+        "listOfAllowedLocations": {
+          "type": "Array",
+          "metadata": {
+            "description": "The list of locations that can be specified when deploying resources.",
+            "displayName": "Allowed locations"
+          },
+          "value": ["Southeast Asia"]
+        }
+      },
+      "name": "Allowed-Southeast-Asia-locations-only",
+      "mode": "all",
+      "displayName": "allowed-Southeast-Asia-locations-only",
+      "description": "This policy allows resources to be deployed only in Southeast Asia."
+    }
+  ]
+}

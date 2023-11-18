@@ -1,0 +1,14 @@
+{
+  "protection_policy": [
+    {
+      "policy_type": "Full",
+      "backup": {
+        "frequency": "Daily",
+        "time": "01:00"
+      },
+      "retention_daily": {
+        "count": 30
+      }
+    }
+  ]
+}
