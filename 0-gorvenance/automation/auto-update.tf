@@ -1,5 +1,6 @@
 locals {
-  timestamp = "${timestamp()}"
+  current_time = timestamp()
+  future_time  = timeadd(timestamp(), "24h")
 }
 resource "azurerm_log_analytics_workspace" "example" {
   name                = "${var.prefix}-update-vm-log-workspace"
@@ -52,7 +53,7 @@ target {
     description = "Windows Definition Updates"
     interval    = 2
     time_zone   = "Asia/Bangkok"
-    start_time  = local.timestamp
+    start_time  = local.future_time
 
   }
         lifecycle {

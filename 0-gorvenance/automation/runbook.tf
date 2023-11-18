@@ -48,7 +48,7 @@ resource "azurerm_automation_schedule" "example" {
   frequency               = "Day"
   interval                = 1
   timezone                = "Asia/Bangkok"
-  start_time              = local.timestamp
+  start_time              = local.future_time
   description             = "This is an example schedule"
           lifecycle {
     ignore_changes = [start_time]
@@ -92,7 +92,7 @@ resource "azurerm_automation_schedule" "r2" {
   frequency               = "Day"
   interval                = 1
   timezone                = "Asia/Bangkok"
-  start_time              = local.timestamp
+  start_time              = local.future_time
   description             = "This is an example schedule"
         lifecycle {
     ignore_changes = [start_time]
