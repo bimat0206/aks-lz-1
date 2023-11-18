@@ -7,25 +7,19 @@ enable_guest_user    = false # Enable user resource creation
 enable_group_member  = true
 enable_groups        = true
 
-/*
-{
-  "appId": "f7850452-f37c-4287-8606-c4ce2df7757f",
-  "displayName": "terraform",
-  "password": "r2C8Q~ElSY4TpdSK1q_EbioTNDop_POz.XMwSaaI",
-  "tenant": "2bd6ad95-d0bf-4876-b6a2-3ccea9a4d9c6"
-}
-*/
 
 resource_groups = {
   "recovery-center" = "Southeast Asia"
   "gorvernace"      = "Southeast Asia"
 }
 resource_labels = {
-  project     = "aks-migration",
+  project     = "migration",
   creator     = "manhht6",
   #costcenter  = "panasonic",
   status      = "active",
   environment = "prod"
+  businessUnit = "IT",
+  #application = "Logistic"
 }
 
 

@@ -1,3 +1,6 @@
+locals {
+  timestamp = "${timestamp()}"
+}
 resource "azurerm_automation_account" "example" {
   name                = "${var.prefix}-1-automation-acc"
   location            = var.resource_group_location
@@ -47,7 +50,7 @@ resource "azurerm_automation_schedule" "example" {
   frequency               = "Day"
   interval                = 1
   timezone                = "Asia/Bangkok"
-  start_time              = "2023-11-13T11:40:15+07:00"
+  start_time              = local.timestamp
   description             = "This is an example schedule"
           lifecycle {
     ignore_changes = [start_time]
@@ -91,7 +94,7 @@ resource "azurerm_automation_schedule" "r2" {
   frequency               = "Day"
   interval                = 1
   timezone                = "Asia/Bangkok"
-  start_time              = "2023-11-13T11:55:15+07:00"
+  start_time              = local.timestamp
   description             = "This is an example schedule"
         lifecycle {
     ignore_changes = [start_time]

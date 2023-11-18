@@ -1,4 +1,6 @@
-
+locals {
+  timestamp = "${timestamp()}"
+}
 resource "azurerm_log_analytics_workspace" "example" {
   name                = "${var.prefix}-update-vm-log-workspace"
   location            = var.resource_group_location
@@ -50,7 +52,7 @@ target {
     description = "Windows Definition Updates"
     interval    = 2
     time_zone   = "Asia/Bangkok"
-    start_time  = "2023-11-13T15:00:15+07:00"
+    start_time  = local.timestamp
 
   }
         lifecycle {

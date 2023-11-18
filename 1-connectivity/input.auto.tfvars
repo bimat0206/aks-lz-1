@@ -1,15 +1,15 @@
 
 
-domain_name = "panasonicrd9"
+domain_name = "dxgcloud"
 tenant      = "panasonic"
 resource_labels = {
   project     = "migration",
   creator     = "manhht6",
-  costcenter  = "panasonic",
+  #costcenter  = "panasonic",
   status      = "active",
   environment = "prod"
       businessUnit = "IT",
-  application = "Logistic"
+  #application = "Logistic"
 }
 
 
@@ -44,11 +44,11 @@ networks2 = {
     address_space = ["192.168.0.0/16"]
     subnets = {
       subnet1 = {
-        name           = "panasonic-prod-migration-spoke1-public-subnet"
+        name           = "prod-migration-spoke1-public-subnet"
         address_prefix = "192.168.1.0/24"
       }
       subnet2 = {
-        name           = "panasonic-prod-migration-spoke1-private-subnet"
+        name           = "prod-migration-spoke1-private-subnet"
         address_prefix = "192.168.2.0/24"
       }
     }

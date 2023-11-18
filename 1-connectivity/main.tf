@@ -1,10 +1,18 @@
 
 locals {
+  prefix = "${var.resource_labels["environment"]}-${var.resource_labels["project"]}"
+  resource_labels = merge(var.resource_labels, {
+    environment = "prod"
+  })
+}
+/*
+locals {
   prefix = "${var.tenant}-${var.resource_labels["environment"]}-${var.resource_labels["project"]}"
   resource_labels = merge(var.resource_labels, {
     environment = "prod"
   })
 }
+*/
 
 module "resource_groups" {
   source          = "./resource-groups"
@@ -87,7 +95,7 @@ resource_group_name        = module.resource_groups.network_resource_group_name
 
 
 data "azurerm_subnet" "spoke1" {
-  name                 = "panasonic-prod-migration-spoke1-public-subnet"
+  name                 = "prod-migration-spoke1-public-subnet"
   virtual_network_name = "${local.prefix}-spoke1-vt"
   resource_group_name  = "${local.prefix}-spoke1-rg"
   depends_on = [ module.virtual_network1, module.virtual_network2 ]
