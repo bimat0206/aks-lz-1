@@ -1,6 +1,4 @@
-locals {
-  timestamp = "${timestamp()}"
-}
+
 resource "azurerm_automation_account" "example" {
   name                = "${var.prefix}-1-automation-acc"
   location            = var.resource_group_location
