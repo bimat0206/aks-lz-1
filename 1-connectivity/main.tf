@@ -201,7 +201,7 @@ module "public_ip" {
 module "vpn" {
   source          = "./vpn"
   virtual_network_name= "${local.prefix}-hub-vt"
-  virtual_network_resource_group_name= module.virtual_network1.hub_resource_group_name
+  virtual_network_resource_group_name= "${local.prefix}-hub-rg"
   resource_group_location= "Southeast Asia"
   
     resource_labels = local.resource_labels
