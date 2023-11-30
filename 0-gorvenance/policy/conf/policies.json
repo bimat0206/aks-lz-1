@@ -19,7 +19,7 @@
             "description": "The list of locations that can be specified when deploying resources.",
             "displayName": "Allowed locations"
           },
-          "value": ["Southeast Asia"]
+          "value": ["Southeast Asia","southeastasia"]
         }
       },
       "name": "Allowed-Southeast-Asia-locations-only",

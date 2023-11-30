@@ -1,0 +1,1 @@
+![Alt text](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/images/hub-spoke.png)
