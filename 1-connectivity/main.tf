@@ -197,3 +197,13 @@ module "public_ip" {
   location = "Southeast Asia"
   depends_on = [ module.resource_groups ]
 }
+
+module "vpn" {
+  source          = "./vpn"
+  virtual_network_name= "${local.prefix}-hub-vt"
+  virtual_network_resource_group_name= module.vpc.hub_resource_group_name
+  resource_group_location= "Southeast Asia"
+  
+    resource_labels = local.resource_labels
+  prefix          = local.prefix
+}
