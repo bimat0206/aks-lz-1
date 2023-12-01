@@ -18,4 +18,31 @@ module "vgw1" {
   vpn_active_active_enabled = true
   virtual_network_resource_group_name = var.virtual_network_resource_group_name
   tags = var.resource_labels
+
+/*
+  local_network_gateways = {
+    name = "${var.prefix}-${random_string.random_suffix.result}-localgw"
+    gateway_address = "4.3.2.1"
+    tags = var.resource_labels
+
+    connection = {
+      name = "${var.prefix}-${random_string.random_suffix.result}-connections-vgw"
+      type = "IPsec"
+      tags = var.resource_labels
+
+    }
+  }
+  */
+  local_network_gateways = {
+    "gateway1" = {
+      name = "${var.prefix}-${random_string.random_suffix.result}-localgw"
+      gateway_address = "4.3.2.1"
+    tags = var.resource_labels
+      connection = {
+        name = "${var.prefix}-${random_string.random_suffix.result}-connections-vgw"
+        type = "IPsec"
+        tags = var.resource_labels
+      }
+    }
+  }
 }
