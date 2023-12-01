@@ -3,7 +3,7 @@ terraform {
     organization = "terra1test"
 
     workspaces {
-      name = "3-app"
+      name = "3-app-aks-1"
     }
   }
   required_providers {
