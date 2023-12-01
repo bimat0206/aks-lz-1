@@ -27,3 +27,5 @@ variable "virtual_network_resource_group_name" {
 }
 variable "virtual_network_name" {
 }
+variable "virtual_network_subnet_address_prefix" {
+}

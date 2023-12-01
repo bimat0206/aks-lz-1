@@ -27,12 +27,13 @@ resource "azurerm_network_manager_connectivity_configuration" "example" {
   name                  = "${var.prefix}-connectivity-conf-nm"
   network_manager_id    = azurerm_network_manager.example.id
   connectivity_topology = "HubAndSpoke"
+  
   applies_to_group {
     #Enabling Direct connectivity creates an overlay of a connected group on top of your hub and spoke topology
     #Direct connectivity allows a spoke VNet to talk directly to other VNets in its spoke group, but not to VNets in other spokes.
     group_connectivity = "DirectlyConnected"
     global_mesh_enabled = true
-    #use_hub_gateway = true
+    use_hub_gateway = true
     network_group_id   = azurerm_network_manager_network_group.spoke.id
   }
   hub {

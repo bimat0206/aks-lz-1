@@ -203,7 +203,7 @@ module "vpn" {
   virtual_network_name= "${local.prefix}-hub-vt"
   virtual_network_resource_group_name= "${local.prefix}-hub-rg"
   resource_group_location= "Southeast Asia"
-  
+  virtual_network_subnet_address_prefix = "10.0.4.0/24"
     resource_labels = local.resource_labels
   prefix          = local.prefix
 }
