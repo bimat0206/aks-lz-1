@@ -12,7 +12,7 @@ module "vgw1" {
   location                            = var.resource_group_location
   name                                = "${var.prefix}-${random_string.random_suffix.result}-vgw"
   sku                                 = "VpnGw2"
-  subnet_address_prefix               = "172.0.1.0/24"
+  subnet_address_prefix               = "10.0.4.0/24"
   type                                = "Vpn"
   virtual_network_name                = var.virtual_network_name
   virtual_network_resource_group_name = var.virtual_network_resource_group_name
