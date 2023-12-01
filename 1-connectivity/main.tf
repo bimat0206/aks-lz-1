@@ -61,13 +61,13 @@ data "azurerm_subscription" "current" {
 
 
 data "azurerm_virtual_network" "hub" {
-  name                = module.virtual_network1.virtual_network_names[0]
-  resource_group_name = module.virtual_network1.virtual_network_resource_group
+  name                = "${local.prefix}-hub-vt"
+  resource_group_name = "${local.prefix}-hub-rg"
   depends_on          = [module.virtual_network2]
 }
 data "azurerm_virtual_network" "spoke" {
-  name                = module.virtual_network2.virtual_network_names[0]
-  resource_group_name = module.virtual_network2.virtual_network_resource_group
+  name                = "${local.prefix}-spoke1-vt"
+  resource_group_name = "${local.prefix}-spoke1-rg"
   depends_on          = [module.virtual_network2]
 }
 
