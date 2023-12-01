@@ -20,7 +20,9 @@ source_address_prefix      = security_rule.value.source_address_prefix
 destination_address_prefix = security_rule.value.destination_address_prefix
 }
 }
-
+lifecycle {
+    ignore_changes = [security_rule,name]
+  }
 }
 
 

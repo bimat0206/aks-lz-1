@@ -52,4 +52,7 @@ resource "azurerm_firewall" "example" {
       public_ip_address_id = each.value.public_ip_address_id
     }
   }
+      lifecycle {
+    ignore_changes = [ip_configuration,name]
+  }
 }

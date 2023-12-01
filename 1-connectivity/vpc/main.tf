@@ -25,6 +25,9 @@ resource "azurerm_virtual_network" "example" {
       #security_group = azurerm_network_security_group.example[each.key].id
     }
   }
+      lifecycle {
+    ignore_changes = [name,subnet]
+  }
 }
 
 
