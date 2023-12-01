@@ -1,7 +1,7 @@
 
 
 domain_name = "dxgcloud"
-#tenant      = "panasonic"
+tenant      = "panasonic"
 resource_labels = {
   project     = "migration",
   creator     = "manhht6",
