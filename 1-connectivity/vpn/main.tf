@@ -36,7 +36,8 @@ module "vgw1" {
   local_network_gateways = {
     "gateway1" = {
       name = "${var.prefix}-${random_string.random_suffix.result}-localgw"
-      gateway_address = "4.3.2.1"
+      gateway_address = "12.13.14.15"
+      address_space       = ["10.0.0.0/16"]
     tags = var.resource_labels
       connection = {
         name = "${var.prefix}-${random_string.random_suffix.result}-connections-vgw"
