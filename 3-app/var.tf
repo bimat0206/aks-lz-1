@@ -38,3 +38,12 @@ variable "databases" {
     database_name = string
   }))
 }
+
+variable "resource_groups" {
+  type = map(string)
+}
+
+
+variable "container_registry_name" {
+ type = list(string)
+}
