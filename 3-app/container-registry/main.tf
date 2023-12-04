@@ -1,6 +1,6 @@
 resource "azurerm_container_registry" "acr" {
     count = length(var.container_registry_name)
-  name                = "${var.prefix}-${var.container_registry_name[count.index]}-${random_string.random_suffix.result}-registry"
+  name                = "${var.container_registry_name[count.index]}${random_string.random_suffix.result}"
   resource_group_name = var.resource_group_name 
   location            = var.resource_group_location
   sku                 = "Premium"
