@@ -4,12 +4,12 @@ domain_name = "dxgcloud"
 tenant      = "panasonic"
 
 resource_labels = {
-  project     = "migration",
-  creator     = "manhht6",
+  project = "migration",
+  creator = "manhht6",
   #costcenter  = "panasonic",
-  status      = "active",
-  environment = "prod"
-      businessUnit = "IT",
+  status       = "active",
+  environment  = "prod"
+  businessUnit = "IT",
   #application = "Logistic"
 }
 

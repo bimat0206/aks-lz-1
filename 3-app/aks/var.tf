@@ -13,7 +13,3 @@ variable "resource_labels" {
 variable "prefix" {
   type = string
 }
-
-variable "container_registry_name" {
- type = list(string)
-}

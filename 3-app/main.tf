@@ -44,13 +44,13 @@ module "resource_groups" {
 
 }
 module "container-registry" {
-  source          = "./container-registry"
+  source = "./container-registry"
 
-  resource_labels = local.resource_labels
-  container_registry_name= var.container_registry_name
-  resource_group_name        = module.resource_groups.container_resource_group_name
-resource_group_location    = module.resource_groups.container_resource_group_location
-  prefix          = local.prefix
+  resource_labels         = local.resource_labels
+  container_registry_name = var.container_registry_name
+  resource_group_name     = module.resource_groups.container_resource_group_name
+  resource_group_location = module.resource_groups.container_resource_group_location
+  prefix                  = local.prefix
 
 
 }
