@@ -54,4 +54,20 @@ module "container-registry" {
 
 
 }
-
+data "azurerm_resource_group" "spoke1" {
+  name = "${local.prefix}-spoke1-rg"
+}
+module "aks1" {
+  source = "./aks"
+  resource_group_name     = "${local.prefix}-spoke1-rg"
+  resource_group_location = data.azurerm_resource_group.spoke1.location
+  resource_group_id=  data.azurerm_resource_group.spoke1.id
+  prefix                  = local.prefix
+resource_labels         = local.resource_labels
+tenant_id = var.tenant_id
+node_count ="3"
+aks_username="admin1234"
+aks_cluster_name="voting-app"
+aks_vm_size="Standard_D2_v2"
+acr_id= module.container-registry.acr_id_0
+}
