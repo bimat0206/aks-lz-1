@@ -15,10 +15,12 @@ terraform {
       source  = "hashicorp/azurerm"
       version = ">=3.0.0"
     }
+    /*
 azapi = {
       source = "Azure/azapi"
       version = "1.10.0"
     }
+    */
     kubernetes = {
       source = "hashicorp/kubernetes"
       version = "2.24.0"
@@ -26,7 +28,7 @@ azapi = {
   }
 
 }
-
+/*
 provider "azapi" {
   use_cli       = false
   subscription_id = var.subscription_id
@@ -34,7 +36,7 @@ provider "azapi" {
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
 }
-
+*/
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
