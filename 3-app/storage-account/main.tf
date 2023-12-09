@@ -3,7 +3,7 @@ resource "random_string" "example" {
   length  = 5
   special = false
   lower = true
-  upper = true
+  upper = false
 }
 
 
