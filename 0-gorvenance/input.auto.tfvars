@@ -39,7 +39,7 @@ storage_accounts = {
 storage_container1 =  ["0-gorvenance-tfstate","1-connectivity-tfstate","2-base-services-tfstate","3-app-tfstate"]
 
 
-vaults=["aks-backup"]
+vaults=["aks-backup","db-backup"]
 
  vm_policies = {
     "example1" = {
