@@ -74,7 +74,7 @@ acr_id= module.container-registry.acr_id_0
 
 module "storage_account" {
   source               = "./storage-account"
-  resource_groups_name = module.resource_groups.gorvernace_resource_group_name
+  resource_groups_name = "${local.prefix}-gorvernace-rg"
   resource_labels      = local.resource_labels
   prefix               = local.prefix
   storage_accounts     = var.storage_accounts
