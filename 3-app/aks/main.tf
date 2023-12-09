@@ -17,6 +17,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   name                = "${var.prefix}-${var.aks_cluster_name}-${random_string.cluster_name.id}-aks"
   resource_group_name = var.resource_group_name
   dns_prefix          = random_string.azurerm_kubernetes_cluster_dns_prefix.id
+  tags = var.resource_labels
 
   identity {
     type = "SystemAssigned"

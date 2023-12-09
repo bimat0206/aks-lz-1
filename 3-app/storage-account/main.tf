@@ -9,7 +9,7 @@ resource "random_string" "example" {
 resource "azurerm_storage_account" "example" {
   for_each = var.storage_accounts
 
-  name                     = each.value.storage_account.name
+  name                     = "${each.value.storage_account.name}000${random_string.example.id}"
   location                 = each.value.storage_account.location
   resource_group_name      = var.resource_groups_name
   account_replication_type = each.value.storage_account.account_replication
