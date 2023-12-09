@@ -65,7 +65,7 @@ module "aks1" {
   prefix                  = local.prefix
 resource_labels         = local.resource_labels
 tenant_id = var.tenant_id
-node_count ="3"
+node_count ="2"
 aks_username="admin1234"
 aks_cluster_name="voting-app"
 aks_vm_size="Standard_D2_v2"

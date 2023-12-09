@@ -27,6 +27,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     name       = "agentpool"
     vm_size    = var.aks_vm_size
     node_count = var.node_count
+     os_sku   = "AzureLinux"
   }
   /*
   linux_profile {
@@ -58,5 +59,22 @@ managed = true
 azure_rbac_enabled = true
 
    }
+
+   key_vault_secrets_provider{
+    secret_rotation_enabled = true
+   }
+
+   storage_profile{
+      blob_driver_enabled         = true
+      disk_driver_enabled         = true
+      disk_driver_version         = "v2"
+      file_driver_enabled         = true
+      snapshot_controller_enabled = true
+}
 }
 
+resource "azurerm_kubernetes_cluster_extension" "k8s" {
+  name           = "${var.prefix}-${var.aks_cluster_name}-${random_string.cluster_name.id}-aks-backup-ext"
+  cluster_id     = azurerm_kubernetes_cluster.k8s.id
+  extension_type = "microsoft.dataprotection.kubernetes"
+}

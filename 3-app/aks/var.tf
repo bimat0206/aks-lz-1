@@ -21,7 +21,6 @@ variable "tenant_id" {
 variable "node_count" {
   type        = number
   description = "The initial quantity of nodes for the node pool."
-  default     = 3
 }
 
 variable "msi_id" {
