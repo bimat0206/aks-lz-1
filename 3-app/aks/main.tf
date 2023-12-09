@@ -67,7 +67,7 @@ azure_rbac_enabled = true
    storage_profile{
       blob_driver_enabled         = true
       disk_driver_enabled         = true
-      disk_driver_version         = "v2"
+      disk_driver_version         = "v1"
       file_driver_enabled         = true
       snapshot_controller_enabled = true
 }
