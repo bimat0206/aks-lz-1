@@ -21,11 +21,11 @@ module "identity_ad" {
   enable_guest_user    = var.enable_guest_user
   enable_group_member  = var.enable_group_member
   enable_groups        = var.enable_groups
-  
-  #role_assignment
 
 }
-#role assignments
+
+
+####role assignments
 data "azurerm_automation_account" "example" {
   name                = "${local.prefix}-1-automation-acc"
   resource_group_name = module.resource_groups.gorvernace_resource_group_name
@@ -50,6 +50,27 @@ locals {
   ]
 }
 
+
+### group_member_assignment
+module "group_member_assignment" {
+  source = "./group-member-assignments"
+  depends_on = [ module.identity_ad ]
+group_member_assignment = local.group_member_assignment
+}
+
+locals {
+  group_member_assignment = [
+    {
+      group_object_id    = module.identity_ad.azuread_group1_id
+      member_object_id   = data.azuread_user.example.id
+    }
+  ]
+}
+
+data "azuread_user" "example" {
+  user_principal_name = "manhht6_fpt.com#EXT#@dxgcloud.onmicrosoft.com"
+}
+#####
 module "resource_groups" {
   source          = "./resource-groups"
   resource_groups = var.resource_groups
