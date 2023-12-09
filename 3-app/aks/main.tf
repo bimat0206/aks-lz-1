@@ -41,6 +41,8 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     load_balancer_sku = "standard"
     network_mode = "transparent"
     network_policy ="cilium"
+    ebpf_data_plane = "cilium"
+    network_plugin_mode = "overlay"
   }
    oms_agent {
     log_analytics_workspace_id = azurerm_log_analytics_workspace.k8s_log.id
