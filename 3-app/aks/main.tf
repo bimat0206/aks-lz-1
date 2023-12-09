@@ -27,7 +27,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     name       = "agentpool"
     vm_size    = var.aks_vm_size
     node_count = var.node_count
-     os_sku   = "AzureLinux"
+    #os_sku   = "AzureLinux"
   }
   /*
   linux_profile {
