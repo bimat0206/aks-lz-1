@@ -49,3 +49,17 @@ resource_groups = {
 }
 
 container_registry_name = ["app"]
+storage_accounts = {
+  "account1" = {
+    storage_account = {
+      name                = "aksbackup"
+      location            = "Southeast Asia"
+      account_replication = "LRS"
+      account_tier        = "Standard"
+    }
+  }
+  # Add more storage accounts as needed
+}
+
+
+storage_container1 =  ["prod-migration-voting-app-okl5-aks"]

@@ -47,3 +47,17 @@ variable "resource_groups" {
 variable "container_registry_name" {
   type = list(string)
 }
+variable "storage_accounts" {
+  type = map(object({
+    storage_account = object({
+      name                = string
+      location            = string
+      account_replication = string
+      account_tier        = string
+    })
+  }))
+}
+
+variable "storage_container1" {
+type=list(string)
+}

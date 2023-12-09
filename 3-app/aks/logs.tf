@@ -23,6 +23,9 @@ plan {
 publisher = "Microsoft"
 product   = "OMSGallery/ContainerInsights"
 }
+              lifecycle {
+    ignore_changes = [solution_name]
+  }
 }
 
 resource "azurerm_log_analytics_workspace" "k8s_defender" {

@@ -71,3 +71,14 @@ aks_cluster_name="voting-app"
 aks_vm_size="Standard_D2_v2"
 acr_id= module.container-registry.acr_id_0
 }
+
+module "storage_account" {
+  source               = "./storage-account"
+  resource_groups_name = module.resource_groups.gorvernace_resource_group_name
+  resource_labels      = local.resource_labels
+  prefix               = local.prefix
+  storage_accounts     = var.storage_accounts
+  #storage_file_share = var.storage_file_share
+storage_container1    = var.storage_container1
+
+}
