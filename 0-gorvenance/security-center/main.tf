@@ -28,15 +28,35 @@ resource "azurerm_security_center_auto_provisioning" "example" {
 }
 resource "azurerm_security_center_subscription_pricing" "example" {
   tier          = "Standard"
-      lifecycle {
-    ignore_changes = [tier]
-  }
-
+  resource_type = "Containers"
 }
 resource "azurerm_security_center_setting" "example" {
   setting_name = "SENTINEL"
   enabled      = true
         lifecycle {
     ignore_changes = [setting_name,enabled]
+  }
+}
+resource "azurerm_security_center_subscription_pricing" "example1" {
+  tier          = "Standard"
+  resource_type = "CloudPosture"
+
+  extension {
+    name = "ContainerRegistriesVulnerabilityAssessments"
+  }
+
+  extension {
+    name = "AgentlessVmScanning"
+    additional_extension_properties = {
+      ExclusionTags = "[]"
+    }
+  }
+
+  extension {
+    name = "AgentlessDiscoveryForKubernetes"
+  }
+
+  extension {
+    name = "SensitiveDataDiscovery"
   }
 }
