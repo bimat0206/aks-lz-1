@@ -4,6 +4,7 @@ resource "azuread_group" "groups" {
 
   display_name     = each.key
   mail_enabled = true
+  security_enabled = true
   description      = each.key
   mail_nickname     = each.value.mail_nickname
   types = ["Unified"]
