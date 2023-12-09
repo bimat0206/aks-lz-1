@@ -46,6 +46,10 @@ locals {
     {
       principal_object_id                = data.azurerm_automation_account.example.identity[0].principal_id
       role_name   = "Owner"
+    },
+    {
+      principal_object_id                = module.identity_ad.azuread_group1_id
+      role_name   = "Azure Kubernetes Service RBAC Cluster Admin"
     }
   ]
 }
@@ -70,6 +74,8 @@ locals {
 data "azuread_user" "example" {
   user_principal_name = "manhht6_fpt.com#EXT#@dxgcloud.onmicrosoft.com"
 }
+
+
 #####
 module "resource_groups" {
   source          = "./resource-groups"
