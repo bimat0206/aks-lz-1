@@ -1,17 +1,7 @@
 [
   {
-    "display_name": "Group A",
-    "group_description": "Group A Description",
-    "mail_nickname": "GroupA"
-  },
-  {
-    "display_name": "Group B",
-    "mail_nickname": "GroupB",
-    "group_description": "Group B Description"
-  },
-  {
-    "display_name": "Group C",
-    "mail_nickname": "GroupC",
-    "group_description": "Group C Description"
+    "display_name": "AKS-Admin-Group",
+    "mail_nickname": "AKS-Admin-Group",
+    "group_description": "AKS-Admin-Group"
   }
 ]
