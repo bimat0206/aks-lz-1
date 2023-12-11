@@ -2,6 +2,8 @@
 locals {
   current_time = timestamp()
   future_time  = timeadd(timestamp(), "24h")
+  start_time = timeadd(timestamp(), "15m")
+  stop_time = timeadd(timestamp(), "25m")
 }
 
 resource "azurerm_automation_account" "example" {
