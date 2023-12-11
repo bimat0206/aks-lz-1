@@ -67,6 +67,10 @@ locals {
     {
       group_object_id    = module.identity_ad.azuread_group1_id
       member_object_id   = data.azuread_user.example.id
+    },
+        {
+      group_object_id    = module.identity_ad.azuread_group1_id
+      member_object_id   = data.azurerm_automation_account.example.identity[0].principal_id
     }
   ]
 }
@@ -146,4 +150,6 @@ module "automation" {
 
 resource_group_name = module.resource_groups.gorvernace_resource_group_name
 resource_group_location = module.resource_groups.gorvernace_resource_group_location
+
+aks_cluster_name = "prod-migration-voting-app-okl5-aks"
 }

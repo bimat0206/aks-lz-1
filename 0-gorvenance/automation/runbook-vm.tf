@@ -1,16 +1,4 @@
-
-resource "azurerm_automation_account" "example" {
-  name                = "${var.prefix}-1-automation-acc"
-  location            = var.resource_group_location
-  resource_group_name = var.resource_group_name
-  identity {
-    type = "SystemAssigned"
-  }
-  sku_name            = "Basic"
-
-tags     = var.resource_labels
-}
-
+/*
 #start
 resource "azurerm_automation_runbook" "r1" {
   name                    = "Start-AzureVM"
@@ -98,4 +86,4 @@ resource "azurerm_automation_schedule" "r2" {
     ignore_changes = [start_time]
   }
 }
-
+*/

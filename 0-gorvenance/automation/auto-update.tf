@@ -1,7 +1,4 @@
-locals {
-  current_time = timestamp()
-  future_time  = timeadd(timestamp(), "24h")
-}
+
 resource "azurerm_log_analytics_workspace" "example" {
   name                = "${var.prefix}-update-vm-log-workspace"
   location            = var.resource_group_location
