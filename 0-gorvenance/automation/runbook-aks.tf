@@ -1,3 +1,4 @@
+
 #start
 resource "azurerm_automation_runbook" "aks-r1" {
   name                    = "Start-aks-cluster"
@@ -35,9 +36,7 @@ resource "azurerm_automation_schedule" "aks-r1" {
   timezone                = "Asia/Bangkok"
   start_time              = local.start_time
   description             = "This is an example schedule"
-          lifecycle {
-    ignore_changes = [start_time]
-  }
+
 }
 
 #stop
@@ -77,7 +76,5 @@ resource "azurerm_automation_schedule" "aks-r2" {
   timezone                = "Asia/Bangkok"
   start_time              = local.stop_time
   description             = "This is an example schedule"
-          lifecycle {
-    ignore_changes = [start_time]
-  }
+
 }

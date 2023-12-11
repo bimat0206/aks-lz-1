@@ -10,6 +10,9 @@ resource "azurerm_role_assignment" "multiple_assignments" {
   role_definition_name = var.role_assignment[count.index].role_name
   scope                = data.azurerm_subscription.primary.id
   principal_id = var.role_assignment[count.index].principal_object_id
+            lifecycle {
+    ignore_changes = [role_definition_name,scope,principal_id]
+  }
 }
 
 
