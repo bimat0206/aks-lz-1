@@ -16,6 +16,7 @@ resource "azurerm_key_vault" "psql_vault" {
   location            = var.resource_group_location
   sku_name            = "standard"
    tenant_id = data.azurerm_client_config.current.tenant_id
+   enable_rbac_authorization = true
 tags     = var.resource_labels
    access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
@@ -50,4 +51,5 @@ resource "azurerm_key_vault_secret" "psql_cred" {
   name = "${var.prefix}-${var.psql_servers["server_name"]}-${random_string.db_name.result}-psql-secret"
   value = jsonencode(local.psql_cred)
   key_vault_id = azurerm_key_vault.psql_vault.id
+  tags     = var.resource_labels
 }

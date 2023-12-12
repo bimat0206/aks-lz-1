@@ -46,7 +46,7 @@ databases = {
 
 
 psql_servers1 = {
-    server_name                  = "votingapp"
+    server_name                  = "voting-app"
     version = "15"
       storage_mb = "65536"
       sku_name = "B_Standard_B2s"
