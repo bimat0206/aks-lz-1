@@ -11,7 +11,7 @@ data "azurerm_client_config" "current" {}
 
 # Create Azure Key Vault
 resource "azurerm_key_vault" "psql_vault" {
-  name = "${var.psql_servers["server_name"]}-${random_string.db_name.result}-psql-vault"
+  name = "${var.psql_servers["server_name"]}-${random_string.db_name.result}-psql"
   resource_group_name = var.resource_group_name
   location            = var.resource_group_location
   sku_name            = "standard"
