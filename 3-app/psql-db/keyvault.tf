@@ -24,11 +24,13 @@ tags     = var.resource_labels
    key_permissions = [
       "Create",
       "Get",
+      "List",
     ]
 
     secret_permissions = [
       "Set",
       "Get",
+      "List",
       "Delete",
       "Purge",
       "Recover"
@@ -37,6 +39,7 @@ tags     = var.resource_labels
 
     storage_permissions = [
       "Get",
+      "List",
     ]
   }
 
