@@ -73,8 +73,3 @@ azure_rbac_enabled = true
 }
 }
 
-resource "azurerm_kubernetes_cluster_extension" "k8s" {
-  name           = "${var.prefix}-${var.aks_cluster_name}-${random_string.cluster_name.id}-aks-backup-ext"
-  cluster_id     = azurerm_kubernetes_cluster.k8s.id
-  extension_type = "microsoft.dataprotection.kubernetes"
-}

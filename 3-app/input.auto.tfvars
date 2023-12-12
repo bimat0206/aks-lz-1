@@ -29,7 +29,7 @@ vms = [
   # Add more VM configurations as needed
 ]
 
-servers = {
+mssql_servers = {
   server1 = {
     server_name                  = "server1"
     administrator_login          = "sqladmin"
@@ -42,6 +42,14 @@ databases = {
     server_name   = "server1"
     database_name = "database1"
   }
+}
+
+
+psql_servers1 = {
+    server_name                  = "votingapp"
+    version = "15"
+      storage_mb = "65536"
+      sku_name = "B_Standard_B2s"
 }
 
 resource_groups = {

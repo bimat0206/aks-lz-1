@@ -24,7 +24,16 @@ variable "vms" {
   }))
 
 }
+/*
 variable "servers" {
+  type = map(object({
+    server_name                  = string
+    administrator_login          = string
+    administrator_login_password = string
+  }))
+}
+*/
+variable "mssql_servers" {
   type = map(object({
     server_name                  = string
     administrator_login          = string
@@ -37,6 +46,11 @@ variable "databases" {
     server_name   = string
     database_name = string
   }))
+}
+
+
+variable "psql_servers1" {
+  type = map(string)
 }
 
 variable "resource_groups" {

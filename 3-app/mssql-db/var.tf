@@ -1,4 +1,4 @@
-variable "servers" {
+variable "mssql_servers" {
   type = map(object({
     server_name = string
     administrator_login = string
@@ -19,6 +19,7 @@ variable "resource_labels" {
 variable "prefix" {
   type = string
 }
+
 
 
 variable "resource_group_name" {

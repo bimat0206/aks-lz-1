@@ -6,8 +6,9 @@ data "azurerm_subnet" "example" {
   virtual_network_name = var.virtual_network_name
   resource_group_name  = var.resource_group_name
 }
+
 resource "azurerm_mssql_server" "example" {
-  for_each = var.servers
+  for_each = var.mssql_servers
 
   name ="${var.prefix}-${each.key}-sql-server"
   resource_group_name = var.resource_group_name
@@ -28,7 +29,7 @@ resource "azurerm_mssql_database" "example" {
   tags     = var.resource_labels
 }
 resource "azurerm_mssql_virtual_network_rule" "example" {
-    for_each = var.servers
+    for_each = var.mssql_servers
   name      = "${var.prefix}-${each.key}-sql-network-rule"
   server_id = azurerm_mssql_server.example[each.value.server_name].id
   subnet_id = data.azurerm_subnet.example.id
