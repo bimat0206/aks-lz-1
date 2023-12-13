@@ -19,13 +19,13 @@
             "description": "The list of locations that can be specified when deploying resources.",
             "displayName": "Allowed locations"
           },
-          "value": ["Southeast Asia","southeastasia"]
+          "value": ["Southeast Asia","southeastasia","global"]
         }
       },
       "name": "Allowed-Southeast-Asia-locations-only",
       "mode": "all",
-      "displayName": "allowed-Southeast-Asia-locations-only",
-      "description": "This policy allows resources to be deployed only in Southeast Asia."
+      "displayName": "allowed-Southeast-Asia&Global-locations-only",
+      "description": "This policy allows resources to be deployed only in Southeast Asia & global."
     }
   ]
 }
