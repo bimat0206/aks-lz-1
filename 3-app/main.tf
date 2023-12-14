@@ -35,7 +35,7 @@ mssql_servers = var.mssql_servers
 databases=var.databases
 }
 */
-/*
+
 module "psql1" {
   source          = "./psql-db"
   resource_labels = local.resource_labels
@@ -46,7 +46,7 @@ resource_group_name = "${local.prefix}-spoke1-rg"
 resource_group_location = data.azurerm_resource_group.spoke1.location
 
 }
-*/
+
 module "resource_groups" {
   source          = "./resource-groups"
   resource_groups = var.resource_groups
