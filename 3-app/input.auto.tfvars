@@ -71,3 +71,26 @@ storage_accounts = {
 
 
 storage_container1 =  ["prod-migration-voting-app-okl5-aks"]
+
+metric_alert1 = {
+  name                  = "pods-ready"
+  frequency ="PT5M"
+  severity = "0"
+  description="Number of pods in ready state"
+
+  criteria_metric_namespace = "microsoft.containerservice/managedclusters"
+  criteria_metric_name = "kube_pod_status_ready"
+  criteria_aggregation="Total"
+  criteria_operator="LessThanOrEqual"
+  criteria_threshold="0"
+
+  dimension_name="Namespace of the pod"
+  dimension_operator ="Include"
+  dimension_values ="kube-system"
+}
+
+action_group1 = {
+    name                  = "p0-critical"
+    short_name = "p0-critical"
+      email_address = "manhht6@fpt.com"
+}

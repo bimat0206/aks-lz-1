@@ -75,3 +75,9 @@ variable "storage_accounts" {
 variable "storage_container1" {
 type=list(string)
 }
+variable "metric_alert1" {
+ type = map(string)
+}
+variable "action_group1" {
+ type = map(string)
+}

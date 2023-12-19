@@ -94,3 +94,13 @@ module "storage_account" {
 storage_container1    = var.storage_container1
 
 }
+module "monitor-metric-alert1" {
+  source               = "./monitor-metric-alert"
+  resource_group_name = "${local.prefix}-gorvernace-rg"
+  resource_labels      = local.resource_labels
+  prefix               = local.prefix
+metric_alert = var.metric_alert1
+action_group= var.action_group1
+metric_alert_scopes = [module.aks1.aks_id]
+
+}
