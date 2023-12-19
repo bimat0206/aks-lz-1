@@ -84,7 +84,7 @@ metric_alert1 = {
   criteria_operator="LessThanOrEqual"
   criteria_threshold="0"
 
-  dimension_name="Namespace of the pod"
+  dimension_name="namespace"
   dimension_operator ="Include"
   dimension_values ="kube-system"
 }

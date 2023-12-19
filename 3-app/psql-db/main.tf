@@ -25,6 +25,7 @@ resource "azurerm_postgresql_flexible_server" "example" {
   administrator_password = random_password.master_password.result
   storage_mb             = var.psql_servers["storage_mb"]
   sku_name               = var.psql_servers["sku_name"]
+  zone                   = "1"
   auto_grow_enabled = true
   tags     = var.resource_labels
 
