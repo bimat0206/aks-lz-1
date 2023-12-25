@@ -15,6 +15,7 @@ terraform {
       source  = "hashicorp/azurerm"
       version = ">=3.0.0"
     }
+
   }
 
 }
@@ -34,3 +35,4 @@ use_cli = false
   client_secret   = var.client_secret
   tenant_id       = var.tenant_id
 }
+

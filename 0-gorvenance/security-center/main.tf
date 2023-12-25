@@ -30,6 +30,16 @@ resource "azurerm_security_center_subscription_pricing" "example" {
   tier          = "Standard"
   resource_type = "Containers"
 }
+resource "azurerm_security_center_subscription_pricing" "example3" {
+  tier          = "Standard"
+  resource_type = "ContainerRegistry"
+}
+resource "azurerm_security_center_subscription_pricing" "example4" {
+  tier          = "Standard"
+  resource_type = "KubernetesService"
+}
+
+
 resource "azurerm_security_center_setting" "example" {
   setting_name = "SENTINEL"
   enabled      = true
@@ -60,3 +70,4 @@ resource "azurerm_security_center_subscription_pricing" "example1" {
     name = "SensitiveDataDiscovery"
   }
 }
+

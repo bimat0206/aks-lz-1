@@ -67,7 +67,7 @@ lifecycle {
     ignore_changes = [name,display_name,parameters]
   }
 }
-
+/*
 #Require a tag on resources
 data "azurerm_policy_definition_built_in" "p4" {
   display_name = "Require a tag on resources"
@@ -93,3 +93,4 @@ lifecycle {
     ignore_changes = [name,display_name,parameters]
   }
 }
+*/
