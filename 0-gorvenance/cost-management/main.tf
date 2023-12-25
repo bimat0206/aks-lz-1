@@ -2,9 +2,8 @@ data "azurerm_subscription" "current" {}
 locals {
   current_time = timestamp()
   future_time  = timeadd(timestamp(), "24h")
-  start_of_month = formatdate("2006-01-02T15:04:05Z", timestamp() - (day(timestamp()) - 1) * 86400)
   start_time = timeadd(timestamp(), "15m")
-  stop_time = timeadd(local.start_of_month, "720h")
+  stop_time = timeadd("2024-01-01T00:00:00Z", "720h")
 }
 resource "azurerm_cost_anomaly_alert" "example" {
   name            = "cost-anomaly-alert"
@@ -28,7 +27,7 @@ resource "azurerm_consumption_budget_subscription" "example" {
   time_grain = "Monthly"
 
   time_period {
-    start_date = local.start_of_month
+    start_date = "2024-01-01T00:00:00Z"
     end_date   = local.stop_time
   }
   notification {
