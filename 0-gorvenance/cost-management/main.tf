@@ -3,7 +3,7 @@ locals {
   current_time = timestamp()
   future_time  = timeadd(timestamp(), "24h")
   start_time = timeadd(timestamp(), "15m")
-  stop_time = timeadd(timestamp(), "30d")
+  stop_time = timeadd(timestamp(), "720h")
 }
 resource "azurerm_cost_anomaly_alert" "example" {
   name            = "cost-anomaly-alert"
